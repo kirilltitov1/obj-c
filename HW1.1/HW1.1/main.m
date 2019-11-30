@@ -16,8 +16,6 @@ int main(int argc, const char * argv[]) {
         float a = 0, b = 0;
         char sing;
         char tresh;
-//        не понравилось че то ))) слишком много мусора в консоль кидает!
-//        NSLog(@"\nInput a = ");
 
     input:
         printf("Input a sing b:\n");
