@@ -1,4 +1,5 @@
 #import "SceneDelegate.h"
+#import "MainVC.h"
 
 @interface SceneDelegate ()
 
@@ -9,7 +10,29 @@
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     
-//    self.window = [[UIWindow alloc] initWithWindowScene: scene];
+    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+    
+    UIWindowScene* windowScene = [UIWindowScene alloc];
+    
+    MainVC* mainVC = [[MainVC alloc] init];
+    
+    self.window.rootViewController = mainVC;
+    
+    self.window.windowScene = windowScene;
+    
+    [self.window makeKeyAndVisible];
+    
+    
+    
+
+//    MainVC* mainVC = [[MainVC alloc] init];
+//
+//    UINavigationController* rootNC = [[UINavigationController alloc] initWithRootViewController: mainVC];
+//
+//    self.window.rootViewController = rootNC;
+//    [self.window makeKeyAndVisible];
+//
+//    [self.window windowScene]
     
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.

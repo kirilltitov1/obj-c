@@ -6,13 +6,13 @@
 //  Copyright © 2020 Kirill Titov. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainVC.h"
 
-@interface ViewController ()
+@interface MainVC ()
 
 @end
 
-@implementation ViewController
+@implementation MainVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
