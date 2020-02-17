@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EF32EB8323F937B300857827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8223F937B300857827 /* AppDelegate.m */; };
-		EF32EB8623F937B300857827 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8523F937B300857827 /* SceneDelegate.m */; };
 		EF32EB8923F937B300857827 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8823F937B300857827 /* ViewController.m */; };
 		EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32EB8D23F937B500857827 /* Assets.xcassets */; };
 		EF32EB9423F937B500857827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB9323F937B500857827 /* main.m */; };
-		EF32EBB823F9AB1800857827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF32EBB623F9AB1800857827 /* LaunchScreen.storyboard */; };
+		EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EBB923F9E38600857827 /* SceneDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,13 +19,12 @@
 		EF32EB8123F937B300857827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF32EB8223F937B300857827 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EF32EB8423F937B300857827 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		EF32EB8523F937B300857827 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		EF32EB8723F937B300857827 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF32EB8823F937B300857827 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EF32EB8D23F937B500857827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF32EB9223F937B500857827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF32EB9323F937B500857827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EF32EBB723F9AB1800857827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF32EBB923F9E38600857827 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +60,12 @@
 				EF32EB8123F937B300857827 /* AppDelegate.h */,
 				EF32EB8223F937B300857827 /* AppDelegate.m */,
 				EF32EB8423F937B300857827 /* SceneDelegate.h */,
-				EF32EB8523F937B300857827 /* SceneDelegate.m */,
+				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
 				EF32EB8723F937B300857827 /* ViewController.h */,
 				EF32EB8823F937B300857827 /* ViewController.m */,
 				EF32EB8D23F937B500857827 /* Assets.xcassets */,
 				EF32EB9223F937B500857827 /* Info.plist */,
 				EF32EB9323F937B500857827 /* main.m */,
-				EF32EBB623F9AB1800857827 /* LaunchScreen.storyboard */,
 			);
 			path = HW1;
 			sourceTree = "<group>";
@@ -131,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */,
-				EF32EBB823F9AB1800857827 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,22 +141,11 @@
 				EF32EB8923F937B300857827 /* ViewController.m in Sources */,
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,
 				EF32EB9423F937B500857827 /* main.m in Sources */,
-				EF32EB8623F937B300857827 /* SceneDelegate.m in Sources */,
+				EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EF32EBB623F9AB1800857827 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF32EBB723F9AB1800857827 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EF32EB9523F937B500857827 /* Debug */ = {
@@ -213,6 +198,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_FLATTEN_NIBS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -265,6 +251,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_FLATTEN_NIBS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
