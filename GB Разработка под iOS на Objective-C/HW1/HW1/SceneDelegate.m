@@ -9,19 +9,17 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    
-    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
-    
-    UIWindowScene* windowScene = [UIWindowScene alloc];
-    
+
+	UIWindow *window = [[UIWindow alloc] initWithWindowScene: (UIWindowScene*) scene];
+
     MainVC* mainVC = [[MainVC alloc] init];
-    
+
     UINavigationController* rootNC = [[UINavigationController alloc] initWithRootViewController: mainVC];
-    
-    self.window.rootViewController = rootNC;
-    
-    self.window.windowScene = windowScene;
-    
+
+	window.rootViewController = rootNC;
+	self.window = window;
+//	self.window.backgroundColor = [UIColor redColor];
+
     [self.window makeKeyAndVisible];
 
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
