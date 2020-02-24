@@ -10,7 +10,7 @@
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
 
-	UIWindow *window = [[UIWindow alloc] initWithWindowScene: (UIWindowScene*) scene];
+	UIWindow* window = [[UIWindow alloc] initWithWindowScene: (UIWindowScene*) scene];
 
     MainVC* mainVC = [[MainVC alloc] init];
 

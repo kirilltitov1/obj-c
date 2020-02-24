@@ -14,26 +14,13 @@
 
 @implementation MainVC
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
         self.view.backgroundColor = [UIColor redColor];
         
-        UIView *newView = [[UIView alloc] initWithFrame:CGRectMake(20.f, 20.f, self.view.frame.size.width - 40.f, self.view.frame.size.height - 40.f)];
-        newView.backgroundColor = [UIColor grayColor];
-        [self.view addSubview:newView];
         
-        CGRect frame = CGRectMake(20, 20, 200.0, 50.0);
-        UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Первый", @"Второй", @"Третий"]];
-        segmentedControl.frame = frame;
-        segmentedControl.tintColor = [UIColor blackColor];
-        segmentedControl.selectedSegmentIndex = 0;
-        [newView addSubview:segmentedControl];
-        
-        UISlider *slider = [[UISlider alloc] init];
-        slider.frame = CGRectMake(20, 90, 200.0, 50.0);;
-        slider.tintColor = [UIColor blackColor];
-        slider.value = 0.5;
-        [self.view addSubview:slider];
         
     }
 
@@ -60,5 +47,60 @@
     //    [self presentViewController:anotherViewController animated:YES completion:nil];
 }
 
+
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 10;
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+	UITableViewCell* cell;
+	
+	return cell;
+}
+
+- (void)encodeWithCoder:(nonnull NSCoder *)coder { 
+	return;
+}
+
+- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection { 
+	return;
+}
+
+- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
+	return;
+}
+
+//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+//	<#code#>
+//}
+
+- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
+	return;
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
+	return;
+}
+
+- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
+	return;
+}
+
+- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator { 
+	return;
+}
+
+- (void)setNeedsFocusUpdate { 
+	return;
+}
+
+- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context { 
+	return NO;
+}
+
+- (void)updateFocusIfNeeded { 
+	return;
+}
 
 @end

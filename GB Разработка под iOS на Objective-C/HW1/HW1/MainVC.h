@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainVC : UIViewController
+@interface MainVC : UIViewController <UITableViewDataSource>
 
+@property (strong, nonnull) UITableView* tableView;
 
 @end
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EF099CCA23FAE0CA0055C52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */; };
+		EF13EC90240427A800FEB8E8 /* tableV.m in Sources */ = {isa = PBXBuildFile; fileRef = EF13EC8F240427A800FEB8E8 /* tableV.m */; };
 		EF32EB8323F937B300857827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8223F937B300857827 /* AppDelegate.m */; };
 		EF32EB8923F937B300857827 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8823F937B300857827 /* MainVC.m */; };
 		EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32EB8D23F937B500857827 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		EF099CC923FAE0CA0055C52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF13EC8E240427A800FEB8E8 /* tableV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tableV.h; path = view/table/tableV.h; sourceTree = "<group>"; };
+		EF13EC8F240427A800FEB8E8 /* tableV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = tableV.m; path = view/table/tableV.m; sourceTree = "<group>"; };
 		EF32EB7E23F937B300857827 /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF32EB8123F937B300857827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF32EB8223F937B300857827 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 				EF32EB8223F937B300857827 /* AppDelegate.m */,
 				EF32EB8423F937B300857827 /* SceneDelegate.h */,
 				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
+				EF13EC8E240427A800FEB8E8 /* tableV.h */,
+				EF13EC8F240427A800FEB8E8 /* tableV.m */,
 				EF32EB8723F937B300857827 /* MainVC.h */,
 				EF32EB8823F937B300857827 /* MainVC.m */,
 				EF32EB8D23F937B500857827 /* Assets.xcassets */,
@@ -146,6 +151,7 @@
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,
 				EF32EB9423F937B500857827 /* main.m in Sources */,
 				EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */,
+				EF13EC90240427A800FEB8E8 /* tableV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
