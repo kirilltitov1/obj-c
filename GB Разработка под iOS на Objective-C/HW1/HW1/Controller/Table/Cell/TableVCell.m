@@ -20,7 +20,7 @@
         _rightLable = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2, 0, [UIScreen mainScreen].bounds.size.width/2, 44)];
         _rightLable.textAlignment = NSTextAlignmentCenter;
         
-//        _rightLable.backgroundColor = [UIColor cyanColor];
+        _rightLable.backgroundColor = [UIColor cyanColor];
 //        _leftLable.backgroundColor = [UIColor blueColor];
         
         [self.contentView addSubview:_rightLable];
