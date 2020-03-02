@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "MainVC.h"
+#import "TableVC.h"
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 

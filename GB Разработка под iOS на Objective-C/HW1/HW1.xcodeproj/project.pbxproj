@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		EF099CCA23FAE0CA0055C52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */; };
-		EF13EC90240427A800FEB8E8 /* tableV.m in Sources */ = {isa = PBXBuildFile; fileRef = EF13EC8F240427A800FEB8E8 /* tableV.m */; };
 		EF32EB8323F937B300857827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8223F937B300857827 /* AppDelegate.m */; };
 		EF32EB8923F937B300857827 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8823F937B300857827 /* MainVC.m */; };
 		EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32EB8D23F937B500857827 /* Assets.xcassets */; };
 		EF32EB9423F937B500857827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB9323F937B500857827 /* main.m */; };
 		EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EBB923F9E38600857827 /* SceneDelegate.m */; };
+		EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DEC2408EC8500BA976B /* TableVCell.m */; };
+		EF9E8DF42408F11600BA976B /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF32408F11600BA976B /* TableVC.m */; };
+		EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF52408FCBD00BA976B /* DataUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EF099CC923FAE0CA0055C52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EF13EC8E240427A800FEB8E8 /* tableV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = tableV.h; path = view/table/tableV.h; sourceTree = "<group>"; };
-		EF13EC8F240427A800FEB8E8 /* tableV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = tableV.m; path = view/table/tableV.m; sourceTree = "<group>"; };
 		EF32EB7E23F937B300857827 /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF32EB8123F937B300857827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF32EB8223F937B300857827 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,6 +30,11 @@
 		EF32EB9223F937B500857827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF32EB9323F937B500857827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF32EBB923F9E38600857827 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EF9E8DEB2408EC8500BA976B /* TableVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVCell.h; sourceTree = "<group>"; };
+		EF9E8DEC2408EC8500BA976B /* TableVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVCell.m; sourceTree = "<group>"; };
+		EF9E8DF22408F11600BA976B /* TableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
+		EF9E8DF32408F11600BA976B /* TableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
+		EF9E8DF52408FCBD00BA976B /* DataUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,19 +68,70 @@
 			isa = PBXGroup;
 			children = (
 				EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */,
-				EF32EB8123F937B300857827 /* AppDelegate.h */,
-				EF32EB8223F937B300857827 /* AppDelegate.m */,
-				EF32EB8423F937B300857827 /* SceneDelegate.h */,
-				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
-				EF13EC8E240427A800FEB8E8 /* tableV.h */,
-				EF13EC8F240427A800FEB8E8 /* tableV.m */,
-				EF32EB8723F937B300857827 /* MainVC.h */,
-				EF32EB8823F937B300857827 /* MainVC.m */,
+				EF9E8DE72408E8E700BA976B /* Foundation */,
+				EF9E8DE62408E8C500BA976B /* View */,
+				EF9E8DE22408E87100BA976B /* Model */,
+				EF9E8DE82408E93E00BA976B /* Controller */,
 				EF32EB8D23F937B500857827 /* Assets.xcassets */,
 				EF32EB9223F937B500857827 /* Info.plist */,
 				EF32EB9323F937B500857827 /* main.m */,
 			);
 			path = HW1;
+			sourceTree = "<group>";
+		};
+		EF9E8DE22408E87100BA976B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DF52408FCBD00BA976B /* DataUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF9E8DE62408E8C500BA976B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF9E8DE72408E8E700BA976B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EF32EB8123F937B300857827 /* AppDelegate.h */,
+				EF32EB8223F937B300857827 /* AppDelegate.m */,
+				EF32EB8423F937B300857827 /* SceneDelegate.h */,
+				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		EF9E8DE82408E93E00BA976B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF32EB8723F937B300857827 /* MainVC.h */,
+				EF32EB8823F937B300857827 /* MainVC.m */,
+				EF9E8DF12408F0A900BA976B /* Table */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EF9E8DEA2408EC5E00BA976B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DEB2408EC8500BA976B /* TableVCell.h */,
+				EF9E8DEC2408EC8500BA976B /* TableVCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EF9E8DF12408F0A900BA976B /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DF22408F11600BA976B /* TableVC.h */,
+				EF9E8DF32408F11600BA976B /* TableVC.m */,
+				EF9E8DEA2408EC5E00BA976B /* Cell */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,11 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */,
 				EF32EB8923F937B300857827 /* MainVC.m in Sources */,
+				EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */,
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,
+				EF9E8DF42408F11600BA976B /* TableVC.m in Sources */,
 				EF32EB9423F937B500857827 /* main.m in Sources */,
 				EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */,
-				EF13EC90240427A800FEB8E8 /* tableV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

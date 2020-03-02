@@ -1,5 +1,4 @@
 #import "SceneDelegate.h"
-#import "MainVC.h"
 
 @interface SceneDelegate ()
 
@@ -12,9 +11,9 @@
 
 	UIWindow* window = [[UIWindow alloc] initWithWindowScene: (UIWindowScene*) scene];
 
-    MainVC* mainVC = [[MainVC alloc] init];
+    TableVC* tableVC = [[TableVC alloc] init];
 
-    UINavigationController* rootNC = [[UINavigationController alloc] initWithRootViewController: mainVC];
+    UINavigationController* rootNC = [[UINavigationController alloc] initWithRootViewController: tableVC];
 
 	window.rootViewController = rootNC;
 	self.window = window;
