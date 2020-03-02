@@ -43,6 +43,7 @@
         cell = [[TableVCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CellID"];
     }
     cell.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
+    [cell setRightLableText:_images[indexPath.row]];
     
     return cell;
 }

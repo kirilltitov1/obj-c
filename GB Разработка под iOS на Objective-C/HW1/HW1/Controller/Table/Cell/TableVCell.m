@@ -29,4 +29,9 @@
     return self;
 }
 
+- (void)setRightLableText:(NSString*) text {
+    _rightLable.text = text;
+    _rightLable.textColor = [UIColor greenColor];
+}
+
 @end
