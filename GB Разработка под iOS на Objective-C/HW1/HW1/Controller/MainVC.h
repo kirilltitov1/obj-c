@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TableVC.h"
 
-@interface MainVC : UIViewController <UITableViewDataSource>
+@interface MainVC : UIViewController
 
 @property (strong, nonnull) TableVC* tableView;
 

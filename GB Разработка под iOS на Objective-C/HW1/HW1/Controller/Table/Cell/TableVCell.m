@@ -13,25 +13,25 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _leftLable = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width/2.0, 44.0)];
-        _leftLable.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:_leftLable];
+        self.leftLable = [[UILabel alloc] initWithFrame: CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width/2.0, 44.0)];
+        self.leftLable.textAlignment = NSTextAlignmentCenter;
+        [self.contentView addSubview:self.leftLable];
         
-        _rightLable = [[UILabel alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2, 0, [UIScreen mainScreen].bounds.size.width/2, 44)];
-        _rightLable.textAlignment = NSTextAlignmentCenter;
+        self.rightLable = [[UILabel alloc] initWithFrame: CGRectMake([UIScreen mainScreen].bounds.size.width/2, 0, [UIScreen mainScreen].bounds.size.width/2, 44)];
+        self.rightLable.textAlignment = NSTextAlignmentCenter;
         
-        _rightLable.backgroundColor = [UIColor cyanColor];
+//        _rightLable.backgroundColor = [UIColor cyanColor];
 //        _leftLable.backgroundColor = [UIColor blueColor];
         
-        [self.contentView addSubview:_rightLable];
+        [self.contentView addSubview:self.rightLable];
     }
     
     return self;
 }
 
 - (void)setRightLableText:(NSString*) text {
-    _rightLable.text = text;
-    _rightLable.textColor = [UIColor greenColor];
+    self.rightLable.text = text;
+    self.rightLable.textColor = [UIColor greenColor];
 }
 
 @end

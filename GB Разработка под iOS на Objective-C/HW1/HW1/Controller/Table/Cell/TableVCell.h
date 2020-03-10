@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *rightLable;
 
 //MARK: -Methods
-- (void)setRightLableText:(NSString*) text;
+- (void)setRightLableText: (NSString*) text;
 
 @end
 

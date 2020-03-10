@@ -10,6 +10,8 @@
 
 @interface TableVC ()
 
+@property (strong, nonatomic) NSMutableArray<Weather*> *weathers;
+
 @end
 
 @implementation TableVC
@@ -20,6 +22,8 @@
     [super viewDidLoad];
     
     _images = [NSArray arrayWithObjects: @"image1", @"image2", @"image3", @"image4", nil];
+//    [self setTitle: @"Using https://newsapi.org"];
+    [self fetchNewsUsingJSON];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,12 +46,63 @@
     if (!cell) {
         cell = [[TableVCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CellID"];
     }
-    cell.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
-    [cell setRightLableText:_images[indexPath.row]];
+    [cell.leftLable setText:    self.weathers[indexPath.row].dt_txt];
+    [cell.rightLable setText:   self.weathers[indexPath.row].desc];
     
     return cell;
 }
 
+- (void) fetchNewsUsingJSON {
+    NSString* apiKey = @"8fa8b982c653552d0011316c25185d7f";
+    NSString* urlString = [NSString stringWithFormat:@"%@%@",@"http://api.openweathermap.org/data/2.5/forecast?q=Moscow&cnt=10&appid=", apiKey];
+    NSURL* url = [NSURL URLWithString:urlString];
+    
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSError* err = error;
+        if (err) {
+            NSLog(@"%@", err);
+            return;
+        }
+        
+        NSMutableArray<Weather*> *weathers = NSMutableArray.new;
+
+        NSDictionary* weatherJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];        
+        for (NSDictionary* weatherDict in weatherJSON[@"list"]) {
+            Weather* weather = Weather.new;
+            weather.windSpeed = weatherDict[@"wind"][@"speed"];
+            
+            weather.dt_txt = weatherDict[@"dt_txt"];
+            NSDateFormatter* isoFormat = NSDateFormatter.new;
+            [isoFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSDate* parsedDate = [isoFormat dateFromString:weather.dt_txt];
+            
+            NSDictionary* weatherMain = weatherDict[@"main"];
+            weather.temp = weatherMain[@"temp"];
+            weather.feels_like = weatherMain[@"feels_like"];
+            weather.temp_min = weatherMain[@"temp_min"];
+            weather.temp_max = weatherMain[@"temp_max"];
+            weather.pressure = weatherMain[@"pressure"];
+            weather.humidity = weatherMain[@"humidity"];
+            
+            NSDictionary* weatherWeather = weatherDict[@"weather"];
+            for (NSDictionary* weatherElem in weatherWeather) {
+                weather.desc = weatherElem[@"description"];
+            }
+            [weathers addObject:weather];
+        }
+        
+        self.weathers = weathers;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }] resume];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

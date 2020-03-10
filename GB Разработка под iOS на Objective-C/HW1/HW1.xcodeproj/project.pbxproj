@@ -13,6 +13,8 @@
 		EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32EB8D23F937B500857827 /* Assets.xcassets */; };
 		EF32EB9423F937B500857827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB9323F937B500857827 /* main.m */; };
 		EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EBB923F9E38600857827 /* SceneDelegate.m */; };
+		EF8F4D212414576C003B6C99 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8F4D202414576C003B6C99 /* APIManager.m */; };
+		EF8F4D25241458AE003B6C99 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8F4D24241458AE003B6C99 /* Weather.m */; };
 		EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DEC2408EC8500BA976B /* TableVCell.m */; };
 		EF9E8DF42408F11600BA976B /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF32408F11600BA976B /* TableVC.m */; };
 		EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF52408FCBD00BA976B /* DataUser.m */; };
@@ -30,6 +32,10 @@
 		EF32EB9223F937B500857827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF32EB9323F937B500857827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF32EBB923F9E38600857827 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EF8F4D1F2414576C003B6C99 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		EF8F4D202414576C003B6C99 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		EF8F4D23241458AE003B6C99 /* Weather.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		EF8F4D24241458AE003B6C99 /* Weather.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		EF9E8DEB2408EC8500BA976B /* TableVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVCell.h; sourceTree = "<group>"; };
 		EF9E8DEC2408EC8500BA976B /* TableVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVCell.m; sourceTree = "<group>"; };
 		EF9E8DF22408F11600BA976B /* TableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
@@ -79,10 +85,22 @@
 			path = HW1;
 			sourceTree = "<group>";
 		};
+		EF8F4D2224145879003B6C99 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EF8F4D1F2414576C003B6C99 /* APIManager.h */,
+				EF8F4D202414576C003B6C99 /* APIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		EF9E8DE22408E87100BA976B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				EF9E8DF52408FCBD00BA976B /* DataUser.m */,
+				EF8F4D23241458AE003B6C99 /* Weather.h */,
+				EF8F4D24241458AE003B6C99 /* Weather.m */,
+				EF8F4D2224145879003B6C99 /* API */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,8 +223,10 @@
 			files = (
 				EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */,
 				EF32EB8923F937B300857827 /* MainVC.m in Sources */,
+				EF8F4D25241458AE003B6C99 /* Weather.m in Sources */,
 				EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */,
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,
+				EF8F4D212414576C003B6C99 /* APIManager.m in Sources */,
 				EF9E8DF42408F11600BA976B /* TableVC.m in Sources */,
 				EF32EB9423F937B500857827 /* main.m in Sources */,
 				EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */,

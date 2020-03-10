@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TableVCell.h"
+#import "Weather.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
