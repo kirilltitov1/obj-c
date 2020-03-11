@@ -6,8 +6,8 @@
 //  Copyright © 2020 Kirill Titov. All rights reserved.
 //
 
-#import "Weather.h"
+#import "CheapestTicket.h"
 
-@implementation Weather
+@implementation CheapestTicket
 
 @end

@@ -10,7 +10,7 @@
 
 @interface TableVC ()
 
-@property (strong, nonatomic) NSMutableArray<Weather*> *weathers;
+@property (strong, nonatomic) NSMutableDictionary *cheapestTickets;
 
 @end
 
@@ -46,15 +46,15 @@
     if (!cell) {
         cell = [[TableVCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CellID"];
     }
-    [cell.leftLable setText:    self.weathers[indexPath.row].dt_txt];
-    [cell.rightLable setText:   self.weathers[indexPath.row].desc];
+//    [cell.leftLable setText:    self.weathers[indexPath.row].dt_txt];
+//    [cell.rightLable setText:   self.weathers[indexPath.row].desc];
     
     return cell;
 }
 
 - (void) fetchNewsUsingJSON {
-    NSString* apiKey = @"8fa8b982c653552d0011316c25185d7f";
-    NSString* urlString = [NSString stringWithFormat:@"%@%@",@"http://api.openweathermap.org/data/2.5/forecast?q=Moscow&cnt=10&appid=", apiKey];
+    NSString* apiKey = @"7e22896b9b8af259d2879e0ab6911c42";
+    NSString* urlString = [NSString stringWithFormat:@"%@%@",@"https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2020-03&return_date=2020-03&token=", apiKey];
     NSURL* url = [NSURL URLWithString:urlString];
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -65,34 +65,22 @@
             return;
         }
         
-        NSMutableArray<Weather*> *weathers = NSMutableArray.new;
+        NSMutableDictionary *cheapestTickets = NSMutableDictionary.new;
 
-        NSDictionary* weatherJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];        
-        for (NSDictionary* weatherDict in weatherJSON[@"list"]) {
-            Weather* weather = Weather.new;
-            weather.windSpeed = weatherDict[@"wind"][@"speed"];
-            
-            weather.dt_txt = weatherDict[@"dt_txt"];
-            NSDateFormatter* isoFormat = NSDateFormatter.new;
-            [isoFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-            NSDate* parsedDate = [isoFormat dateFromString:weather.dt_txt];
-            
-            NSDictionary* weatherMain = weatherDict[@"main"];
-            weather.temp = weatherMain[@"temp"];
-            weather.feels_like = weatherMain[@"feels_like"];
-            weather.temp_min = weatherMain[@"temp_min"];
-            weather.temp_max = weatherMain[@"temp_max"];
-            weather.pressure = weatherMain[@"pressure"];
-            weather.humidity = weatherMain[@"humidity"];
-            
-            NSDictionary* weatherWeather = weatherDict[@"weather"];
-            for (NSDictionary* weatherElem in weatherWeather) {
-                weather.desc = weatherElem[@"description"];
-            }
-            [weathers addObject:weather];
-        }
+        NSDictionary* dataJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
         
-        self.weathers = weathers;
+//      из даы получаем доступ с словарю аэропортов
+        NSDictionary* airportsDict = dataJSON[@"data"];
+//      проход по каждому аэропорту
+        NSDictionary* airportDict = airportsDict[@"HKT"];
+
+        NSDateFormatter* isoFormat = NSDateFormatter.new;
+        [isoFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSDate* parsedDate = [isoFormat dateFromString:weather.dt_txt];
+
+        [aviaSales addObject:aviaSale];
+        
+        self.cheapestTickets = cheapestTickets;
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
