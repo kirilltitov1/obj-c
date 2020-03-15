@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber* price;
 @property (nonatomic, strong) NSString* airline;
 @property (nonatomic, strong) NSString* flight_number;
-@property (nonatomic, strong) NSString* departure_at;
-@property (nonatomic, strong) NSString* return_at;
-@property (nonatomic, strong) NSString* expires_at;
+@property (nonatomic, strong) NSDate* departure_at;
+@property (nonatomic, strong) NSDate* return_at;
+@property (nonatomic, strong) NSDate* expires_at;
 
 @end
 

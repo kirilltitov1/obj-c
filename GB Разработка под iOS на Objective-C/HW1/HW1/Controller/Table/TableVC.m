@@ -10,19 +10,31 @@
 
 @interface TableVC ()
 
-@property (strong, nonatomic) NSMutableDictionary *cheapestTickets;
+//@property (strong, nonatomic) NSMutableDictionary<NSString *, CheapestTicket *>* cheapestTickets;
+@property (strong, nonatomic) NSMutableArray<CheapestTicket *>* cheapestTickets;
+@property (strong, nonatomic) Airports *airports;
 
 @end
 
-@implementation TableVC
+NSInteger alphabeticSort(id string1, id string2, void *reverse)
+{
+    if (*(BOOL *)reverse == YES) {
+        return [string2 localizedStandardCompare:string1];
+    }
+    return [string1 localizedStandardCompare:string2];
+}
 
+@implementation TableVC
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.airports = Airports.new;
+    
     _images = [NSArray arrayWithObjects: @"image1", @"image2", @"image3", @"image4", nil];
-//    [self setTitle: @"Using https://newsapi.org"];
+    
+    [self setTitle: [NSString stringWithFormat:@"%@%@", @"to ", self.airports.HKT]];
     [self fetchNewsUsingJSON];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -46,15 +58,23 @@
     if (!cell) {
         cell = [[TableVCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CellID"];
     }
-//    [cell.leftLable setText:    self.weathers[indexPath.row].dt_txt];
-//    [cell.rightLable setText:   self.weathers[indexPath.row].desc];
+    
+//    [cell.leftLable setText:];
     
     return cell;
 }
 
+- (NSInteger)alphabeticSort: (id)string1 string2: (id) string2 isReverse: (void *) reverse {
+    
+    if (*(BOOL *)reverse == YES) {
+        return [string2 localizedStandardCompare:string1];
+    }
+    return [string1 localizedStandardCompare:string2];
+}
+
 - (void) fetchNewsUsingJSON {
     NSString* apiKey = @"7e22896b9b8af259d2879e0ab6911c42";
-    NSString* urlString = [NSString stringWithFormat:@"%@%@",@"https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=HKT&depart_date=2020-03&return_date=2020-03&token=", apiKey];
+    NSString* urlString = [NSString stringWithFormat:@"%@%@%@%@",@"https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=", self.airports.HKT, @"&depart_date=2020-03&return_date=2020-03&token=", apiKey];
     NSURL* url = [NSURL URLWithString:urlString];
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -65,20 +85,37 @@
             return;
         }
         
-        NSMutableDictionary *cheapestTickets = NSMutableDictionary.new;
+        NSMutableArray *cheapestTickets = NSMutableArray.new;
 
-        NSDictionary* dataJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+        NSDictionary *dataJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
         
-//      из даы получаем доступ с словарю аэропортов
-        NSDictionary* airportsDict = dataJSON[@"data"];
-//      проход по каждому аэропорту
-        NSDictionary* airportDict = airportsDict[@"HKT"];
-
-        NSDateFormatter* isoFormat = NSDateFormatter.new;
-        [isoFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-        NSDate* parsedDate = [isoFormat dateFromString:weather.dt_txt];
-
-        [aviaSales addObject:aviaSale];
+        NSDictionary *airportsDict = dataJSON[@"data"];
+        
+        NSDictionary *airportDict = airportsDict[@"HKT"];
+        
+        BOOL reverseSort = NO;
+        NSArray *keys = [airportDict.allKeys sortedArrayUsingFunction:alphabeticSort context:&reverseSort];
+        
+//        TODO: - сделать проходку ключам которые я отсортировал выше, спросить не костыль ли это и как стоило сделать лучше.
+        for (NSString *key in keys) {
+            NSDateFormatter *isoFormat = NSDateFormatter.new;
+            [isoFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+            
+            NSDictionary *ticketDict = airportDict[key];
+            CheapestTicket *cheapestTicket = CheapestTicket.new;
+            cheapestTicket.price = ticketDict[@"price"];
+            cheapestTicket.airline = ticketDict[@"airline"];
+            cheapestTicket.flight_number = ticketDict[@"flight_number"];
+            
+            NSDate *parsedDate = [isoFormat dateFromString:ticketDict[@"departure_at"]];
+            cheapestTicket.departure_at = parsedDate;
+            parsedDate = [isoFormat dateFromString:ticketDict[@"return_at"]];
+            cheapestTicket.return_at = parsedDate;
+            parsedDate = [isoFormat dateFromString:ticketDict[@"expires_at"]];
+            cheapestTicket.expires_at = parsedDate;
+            
+            [cheapestTickets addObject:cheapestTicket];
+        }
         
         self.cheapestTickets = cheapestTickets;
         

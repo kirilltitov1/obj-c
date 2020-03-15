@@ -18,6 +18,7 @@
 		EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DEC2408EC8500BA976B /* TableVCell.m */; };
 		EF9E8DF42408F11600BA976B /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF32408F11600BA976B /* TableVC.m */; };
 		EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF52408FCBD00BA976B /* DataUser.m */; };
+		EFC2EE52241B618B00769235 /* Airports.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2EE51241B618B00769235 /* Airports.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		EF9E8DF22408F11600BA976B /* TableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
 		EF9E8DF32408F11600BA976B /* TableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
 		EF9E8DF52408FCBD00BA976B /* DataUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUser.m; sourceTree = "<group>"; };
+		EFC2EE50241B618B00769235 /* Airports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airports.h; sourceTree = "<group>"; };
+		EFC2EE51241B618B00769235 /* Airports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airports.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				EF9E8DF52408FCBD00BA976B /* DataUser.m */,
+				EFC2EE50241B618B00769235 /* Airports.h */,
+				EFC2EE51241B618B00769235 /* Airports.m */,
 				EFDDCCC0241843480002401F /* Tickets */,
 				EF8F4D2224145879003B6C99 /* API */,
 			);
@@ -238,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */,
+				EFC2EE52241B618B00769235 /* Airports.m in Sources */,
 				EF32EB8923F937B300857827 /* MainVC.m in Sources */,
 				EF8F4D25241458AE003B6C99 /* CheapestTicket.m in Sources */,
 				EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */,
