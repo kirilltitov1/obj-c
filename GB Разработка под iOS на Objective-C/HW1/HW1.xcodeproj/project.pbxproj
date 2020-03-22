@@ -19,6 +19,7 @@
 		EF9E8DF42408F11600BA976B /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF32408F11600BA976B /* TableVC.m */; };
 		EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF52408FCBD00BA976B /* DataUser.m */; };
 		EFC2EE52241B618B00769235 /* Airports.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2EE51241B618B00769235 /* Airports.m */; };
+		EFDE8FA024201F2000ADD0BE /* MoreInfoC.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		EF9E8DF52408FCBD00BA976B /* DataUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUser.m; sourceTree = "<group>"; };
 		EFC2EE50241B618B00769235 /* Airports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airports.h; sourceTree = "<group>"; };
 		EFC2EE51241B618B00769235 /* Airports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airports.m; sourceTree = "<group>"; };
+		EFDE8F9E24201F2000ADD0BE /* MoreInfoC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreInfoC.h; sourceTree = "<group>"; };
+		EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreInfoC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +133,7 @@
 		EF9E8DE82408E93E00BA976B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EF32EB8723F937B300857827 /* MainVC.h */,
-				EF32EB8823F937B300857827 /* MainVC.m */,
+				EFDE8F9D24201EC600ADD0BE /* View */,
 				EF9E8DF12408F0A900BA976B /* Table */,
 			);
 			path = Controller;
@@ -171,6 +173,17 @@
 				EF8F4D24241458AE003B6C99 /* CheapestTicket.m */,
 			);
 			path = Cheapest;
+			sourceTree = "<group>";
+		};
+		EFDE8F9D24201EC600ADD0BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF32EB8723F937B300857827 /* MainVC.h */,
+				EF32EB8823F937B300857827 /* MainVC.m */,
+				EFDE8F9E24201F2000ADD0BE /* MoreInfoC.h */,
+				EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +258,7 @@
 				EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */,
 				EFC2EE52241B618B00769235 /* Airports.m in Sources */,
 				EF32EB8923F937B300857827 /* MainVC.m in Sources */,
+				EFDE8FA024201F2000ADD0BE /* MoreInfoC.m in Sources */,
 				EF8F4D25241458AE003B6C99 /* CheapestTicket.m in Sources */,
 				EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */,
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,

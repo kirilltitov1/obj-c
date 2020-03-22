@@ -10,6 +10,7 @@
 #import "TableVCell.h"
 #import "CheapestTicket.h"
 #import "Airports.h"
+#import "MoreInfoC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: -Methods
 - (void)setRightLableText: (NSString*) text;
-
 @end
 
 NS_ASSUME_NONNULL_END

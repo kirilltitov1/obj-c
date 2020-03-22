@@ -59,7 +59,19 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
         cell = [[TableVCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: @"CellID"];
     }
     
-//    [cell.leftLable setText:];
+    NSDateFormatter *dateFormatter = NSDateFormatter.new;
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    [cell.leftLable setText: [NSString stringWithFormat:@"%@%s%@",
+                              self.cheapestTickets[indexPath.row].airline,
+                              "\nPrice = ",
+                              self.cheapestTickets[indexPath.row].price]];
+    [cell.rightLable setText: [NSString stringWithFormat:@"%19@%s%19@",
+                               [dateFormatter stringFromDate:self.cheapestTickets[indexPath.row].departure_at],
+                               "\n",
+                               [dateFormatter stringFromDate:self.cheapestTickets[indexPath.row].return_at]]];
+    
+    tableView.rowHeight = 60;
     
     return cell;
 }
@@ -96,10 +108,10 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
         BOOL reverseSort = NO;
         NSArray *keys = [airportDict.allKeys sortedArrayUsingFunction:alphabeticSort context:&reverseSort];
         
-//        TODO: - сделать проходку ключам которые я отсортировал выше, спросить не костыль ли это и как стоило сделать лучше.
         for (NSString *key in keys) {
             NSDateFormatter *isoFormat = NSDateFormatter.new;
             [isoFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+            isoFormat.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
             
             NSDictionary *ticketDict = airportDict[key];
             CheapestTicket *cheapestTicket = CheapestTicket.new;
@@ -108,6 +120,7 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
             cheapestTicket.flight_number = ticketDict[@"flight_number"];
             
             NSDate *parsedDate = [isoFormat dateFromString:ticketDict[@"departure_at"]];
+            
             cheapestTicket.departure_at = parsedDate;
             parsedDate = [isoFormat dateFromString:ticketDict[@"return_at"]];
             cheapestTicket.return_at = parsedDate;
@@ -127,6 +140,9 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    MoreInfoC *nextVC = MoreInfoC.new;
+    nextVC.cheapestTicket = self.cheapestTickets[indexPath.row];
+    [[self navigationController] pushViewController:nextVC animated:nil];
 }
 
 /*
@@ -163,7 +179,6 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -171,6 +186,5 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end
