@@ -7,24 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF099CCA23FAE0CA0055C52D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */; };
 		EF32EB8323F937B300857827 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8223F937B300857827 /* AppDelegate.m */; };
-		EF32EB8923F937B300857827 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8823F937B300857827 /* ViewController.m */; };
+		EF32EB8923F937B300857827 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB8823F937B300857827 /* MainVC.m */; };
 		EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF32EB8D23F937B500857827 /* Assets.xcassets */; };
 		EF32EB9423F937B500857827 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EB9323F937B500857827 /* main.m */; };
 		EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF32EBB923F9E38600857827 /* SceneDelegate.m */; };
+		EF8F4D212414576C003B6C99 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8F4D202414576C003B6C99 /* APIManager.m */; };
+		EF8F4D25241458AE003B6C99 /* CheapestTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8F4D24241458AE003B6C99 /* CheapestTicket.m */; };
+		EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DEC2408EC8500BA976B /* TableVCell.m */; };
+		EF9E8DF42408F11600BA976B /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF32408F11600BA976B /* TableVC.m */; };
+		EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9E8DF52408FCBD00BA976B /* DataUser.m */; };
+		EFC2EE52241B618B00769235 /* Airports.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC2EE51241B618B00769235 /* Airports.m */; };
+		EFDE8FA024201F2000ADD0BE /* MoreInfoC.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF099CC923FAE0CA0055C52D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF32EB7E23F937B300857827 /* HW1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF32EB8123F937B300857827 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF32EB8223F937B300857827 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EF32EB8423F937B300857827 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		EF32EB8723F937B300857827 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EF32EB8823F937B300857827 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EF32EB8723F937B300857827 /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		EF32EB8823F937B300857827 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		EF32EB8D23F937B500857827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF32EB9223F937B500857827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF32EB9323F937B500857827 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF32EBB923F9E38600857827 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EF8F4D1F2414576C003B6C99 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		EF8F4D202414576C003B6C99 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		EF8F4D23241458AE003B6C99 /* CheapestTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheapestTicket.h; sourceTree = "<group>"; };
+		EF8F4D24241458AE003B6C99 /* CheapestTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheapestTicket.m; sourceTree = "<group>"; };
+		EF9E8DEB2408EC8500BA976B /* TableVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVCell.h; sourceTree = "<group>"; };
+		EF9E8DEC2408EC8500BA976B /* TableVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVCell.m; sourceTree = "<group>"; };
+		EF9E8DF22408F11600BA976B /* TableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
+		EF9E8DF32408F11600BA976B /* TableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
+		EF9E8DF52408FCBD00BA976B /* DataUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataUser.m; sourceTree = "<group>"; };
+		EFC2EE50241B618B00769235 /* Airports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airports.h; sourceTree = "<group>"; };
+		EFC2EE51241B618B00769235 /* Airports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airports.m; sourceTree = "<group>"; };
+		EFDE8F9E24201F2000ADD0BE /* MoreInfoC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreInfoC.h; sourceTree = "<group>"; };
+		EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreInfoC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +79,111 @@
 		EF32EB8023F937B300857827 /* HW1 */ = {
 			isa = PBXGroup;
 			children = (
-				EF32EB8123F937B300857827 /* AppDelegate.h */,
-				EF32EB8223F937B300857827 /* AppDelegate.m */,
-				EF32EB8423F937B300857827 /* SceneDelegate.h */,
-				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
-				EF32EB8723F937B300857827 /* ViewController.h */,
-				EF32EB8823F937B300857827 /* ViewController.m */,
+				EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */,
+				EF9E8DE72408E8E700BA976B /* Foundation */,
+				EF9E8DE62408E8C500BA976B /* View */,
+				EF9E8DE22408E87100BA976B /* Model */,
+				EF9E8DE82408E93E00BA976B /* Controller */,
 				EF32EB8D23F937B500857827 /* Assets.xcassets */,
 				EF32EB9223F937B500857827 /* Info.plist */,
 				EF32EB9323F937B500857827 /* main.m */,
 			);
 			path = HW1;
+			sourceTree = "<group>";
+		};
+		EF8F4D2224145879003B6C99 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EF8F4D1F2414576C003B6C99 /* APIManager.h */,
+				EF8F4D202414576C003B6C99 /* APIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		EF9E8DE22408E87100BA976B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DF52408FCBD00BA976B /* DataUser.m */,
+				EFC2EE50241B618B00769235 /* Airports.h */,
+				EFC2EE51241B618B00769235 /* Airports.m */,
+				EFDDCCC0241843480002401F /* Tickets */,
+				EF8F4D2224145879003B6C99 /* API */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF9E8DE62408E8C500BA976B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF9E8DE72408E8E700BA976B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EF32EB8123F937B300857827 /* AppDelegate.h */,
+				EF32EB8223F937B300857827 /* AppDelegate.m */,
+				EF32EB8423F937B300857827 /* SceneDelegate.h */,
+				EF32EBB923F9E38600857827 /* SceneDelegate.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		EF9E8DE82408E93E00BA976B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFDE8F9D24201EC600ADD0BE /* View */,
+				EF9E8DF12408F0A900BA976B /* Table */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EF9E8DEA2408EC5E00BA976B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DEB2408EC8500BA976B /* TableVCell.h */,
+				EF9E8DEC2408EC8500BA976B /* TableVCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EF9E8DF12408F0A900BA976B /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				EF9E8DF22408F11600BA976B /* TableVC.h */,
+				EF9E8DF32408F11600BA976B /* TableVC.m */,
+				EF9E8DEA2408EC5E00BA976B /* Cell */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		EFDDCCC0241843480002401F /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				EFDDCCC1241843570002401F /* Cheapest */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
+		EFDDCCC1241843570002401F /* Cheapest */ = {
+			isa = PBXGroup;
+			children = (
+				EF8F4D23241458AE003B6C99 /* CheapestTicket.h */,
+				EF8F4D24241458AE003B6C99 /* CheapestTicket.m */,
+			);
+			path = Cheapest;
+			sourceTree = "<group>";
+		};
+		EFDE8F9D24201EC600ADD0BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF32EB8723F937B300857827 /* MainVC.h */,
+				EF32EB8823F937B300857827 /* MainVC.m */,
+				EFDE8F9E24201F2000ADD0BE /* MoreInfoC.h */,
+				EFDE8F9F24201F2000ADD0BE /* MoreInfoC.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF32EB8E23F937B500857827 /* Assets.xcassets in Resources */,
+				EF099CCA23FAE0CA0055C52D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,14 +255,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF32EB8923F937B300857827 /* ViewController.m in Sources */,
+				EF9E8DF62408FCBD00BA976B /* DataUser.m in Sources */,
+				EFC2EE52241B618B00769235 /* Airports.m in Sources */,
+				EF32EB8923F937B300857827 /* MainVC.m in Sources */,
+				EFDE8FA024201F2000ADD0BE /* MoreInfoC.m in Sources */,
+				EF8F4D25241458AE003B6C99 /* CheapestTicket.m in Sources */,
+				EF9E8DED2408EC8500BA976B /* TableVCell.m in Sources */,
 				EF32EB8323F937B300857827 /* AppDelegate.m in Sources */,
+				EF8F4D212414576C003B6C99 /* APIManager.m in Sources */,
+				EF9E8DF42408F11600BA976B /* TableVC.m in Sources */,
 				EF32EB9423F937B500857827 /* main.m in Sources */,
 				EF32EBBA23F9E38600857827 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF099CC823FAE0CA0055C52D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF099CC923FAE0CA0055C52D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EF32EB9523F937B500857827 /* Debug */ = {
