@@ -13,9 +13,8 @@
 
 - (void)drawRect:(CGRect)rect {
     self.delegate = self;
-    
+    [self createAnnotatio];
 }
-
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     static NSString *identifire = @"marker";
@@ -31,7 +30,6 @@
     return annotationView;
 }
 
-
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -41,12 +39,9 @@
         self.initialLocation = [[CLLocation alloc] initWithLatitude:55.7522200 longitude:37.6155600];
         self.region = _regionCoord;
         
-        [self createAnnotatio];
-//        [self startLocation];
     }
     return self;
 }
-
 
 - (void)createAnnotatio {
     self.annotation = MKPointAnnotation.new;
@@ -54,40 +49,8 @@
     _annotation.subtitle = @"Subtitle";
     _annotation.coordinate = _coordinate;
     [self addAnnotation:_annotation];
-    
-//    CLLocation *location = [[CLLocation alloc] initWithCoordinate:_coordinate altitude:0 horizontalAccuracy:kCLLocationAccuracyBestForNavigation verticalAccuracy:kCLLocationAccuracyBestForNavigation timestamp:[NSDate date]];
-//    [self addressFromLocation:location];
 }
 
 
-//- (void) addressFromLocation:(CLLocation *) location {
-//    CLGeocoder *geocoder = CLGeocoder.new;
-//    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-//        if (placemarks > 0) {
-//            for (MKPlacemark *placemark in placemarks) {
-//                NSLog(@"%@", placemark);
-//            }
-//        }
-//    }];
-//    return;
-//}
-
-
-//- (void)startLocation {
-//    CLLocationManager *locationMannager = CLLocationManager.new;
-//    locationMannager.delegate = self;
-//    locationMannager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-//    locationMannager.distanceFilter = 10;
-//    [locationMannager requestWhenInUseAuthorization];
-//
-//    [locationMannager stopUpdatingLocation];
-//}
-
-//- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-//    CLLocation *location = [locations firstObject];
-//    if (location) {
-//        NSLog(@"%@", location);
-//    }
-//}
 
 @end
