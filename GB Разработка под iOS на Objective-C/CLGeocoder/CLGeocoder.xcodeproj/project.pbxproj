@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF05505424322CF0009095EC /* LocationServices.m in Sources */ = {isa = PBXBuildFile; fileRef = EF05505324322CF0009095EC /* LocationServices.m */; };
 		EF1E2EF02428CFD400486753 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EEF2428CFD400486753 /* AppDelegate.m */; };
 		EF1E2EF32428CFD400486753 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EF22428CFD400486753 /* SceneDelegate.m */; };
 		EF1E2EF62428CFD400486753 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EF52428CFD400486753 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF05505224322CF0009095EC /* LocationServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServices.h; sourceTree = "<group>"; };
+		EF05505324322CF0009095EC /* LocationServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServices.m; sourceTree = "<group>"; };
 		EF1E2EEB2428CFD400486753 /* CLGeocoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLGeocoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1E2EEE2428CFD400486753 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF1E2EEF2428CFD400486753 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF05505124322CD2009095EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF05505224322CF0009095EC /* LocationServices.h */,
+				EF05505324322CF0009095EC /* LocationServices.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EF1E2EE22428CFD400486753 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +81,7 @@
 			children = (
 				EF503C77242E424900148B7A /* Foundation */,
 				EF503C78242E427600148B7A /* Controllers */,
+				EF05505124322CD2009095EC /* Model */,
 				EF503C76242E423900148B7A /* View */,
 				EF1E2EFA2428CFD600486753 /* Assets.xcassets */,
 				EF1E2EF72428CFD400486753 /* Main.storyboard */,
@@ -186,6 +199,7 @@
 				EF1E2F012428CFD600486753 /* main.m in Sources */,
 				EF1E2EF32428CFD400486753 /* SceneDelegate.m in Sources */,
 				EF503C72242E3E6A00148B7A /* MapVC.m in Sources */,
+				EF05505424322CF0009095EC /* LocationServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

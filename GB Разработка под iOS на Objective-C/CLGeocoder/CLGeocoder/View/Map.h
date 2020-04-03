@@ -7,10 +7,11 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Map : MKMapView <MKMapViewDelegate>
+@interface Map : MKMapView <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic) MKCoordinateRegion regionCoord;
