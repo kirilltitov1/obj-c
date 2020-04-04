@@ -13,9 +13,33 @@
 
 - (void)drawRect:(CGRect)rect {
     self.delegate = self;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiseDidUpdateCurrentLocation object:nil];
     [self createAnnotatio];
 }
 
+#pragma mark - init
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        self.coordinate = CLLocationCoordinate2DMake(55.7522200, 37.6155600);
+        self.regionCoord = MKCoordinateRegionMakeWithDistance(_coordinate, 10000, 10000);
+        self.initialLocation = [[CLLocation alloc] initWithLatitude:55.7522200 longitude:37.6155600];
+        _locationServise = LocationServices.new;
+    }
+    return self;
+}
+
+#pragma mark - annotations
+- (void)createAnnotatio {
+    self.annotation = MKPointAnnotation.new;
+    _annotation.title = @"Title";
+    _annotation.subtitle = @"Subtitle";
+    _annotation.coordinate = _coordinate;
+    [self addAnnotation:_annotation];
+}
+
+#pragma mark - delegate methods
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     static NSString *identifire = @"marker";
     
@@ -30,27 +54,12 @@
     return annotationView;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.coordinate = CLLocationCoordinate2DMake(55.7522200, 37.6155600);
-        self.regionCoord = MKCoordinateRegionMakeWithDistance(_coordinate, 10000, 10000);
-        self.initialLocation = [[CLLocation alloc] initWithLatitude:55.7522200 longitude:37.6155600];
-        self.region = _regionCoord;
-        
-    }
-    return self;
+- (void)updateCurrentLocation: (NSNotification *) notification {
+    CLLocation *currentLocation = notification.object;
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 10000, 10000);
+    [self setRegion:region animated:NO];
 }
-
-- (void)createAnnotatio {
-    self.annotation = MKPointAnnotation.new;
-    _annotation.title = @"Title";
-    _annotation.subtitle = @"Subtitle";
-    _annotation.coordinate = _coordinate;
-    [self addAnnotation:_annotation];
-}
-
 
 
 @end

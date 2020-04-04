@@ -29,7 +29,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     if (!_currentLocation) {
-        _currentLocation = locations.firstObject;
+        _currentLocation = [locations firstObject];
         [_locationManager stopUpdatingLocation];
         [[NSNotificationCenter defaultCenter] postNotificationName:kLocationServiseDidUpdateCurrentLocation object:_currentLocation];
     }
