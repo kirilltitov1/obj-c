@@ -12,7 +12,8 @@
 
 
 - (void)drawRect:(CGRect)rect {
-    self.delegate = [self ]
+    self.delegate = self;
+    [self initLocationService];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentLocation:) name:kLocationServiseDidUpdateCurrentLocation object:nil];
     [self createAnnotatio];
 }
@@ -23,6 +24,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         [self initLocationService];
+        self.showsUserLocation = YES;
         self.coordinate = CLLocationCoordinate2DMake(55.7522200, 37.6155600);
         self.regionCoord = MKCoordinateRegionMakeWithDistance(_coordinate, 10000, 10000);
         self.initialLocation = [[CLLocation alloc] initWithLatitude:55.7522200 longitude:37.6155600];
@@ -60,8 +62,6 @@
 
 - (void)updateCurrentLocation: (NSNotification *) notification {
     CLLocation *currentLocation = notification.object;
-    
-    NSLog(@"%@", currentLocation);
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 10000, 10000);
     [self setRegion:region animated:NO];
