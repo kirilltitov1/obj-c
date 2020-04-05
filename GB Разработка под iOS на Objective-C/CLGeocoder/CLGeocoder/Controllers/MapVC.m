@@ -22,6 +22,8 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(createAnnotation:) name:kLocationManagerDidUpdateCurrentLoaction object:nil];
     
+    [self setupMap];
+    
     [self checkLocationServices];
 }
 
@@ -34,6 +36,12 @@
         _regionDistance = 10000;
     }
     return self;
+}
+
+#pragma mark - map
+- (void)setupMap {
+    _map_main.delegate = self;
+    _map_main.showsUserLocation = YES;
 }
 
 #pragma mark - loaction
@@ -95,7 +103,7 @@
 - (void)createAnnotation: (NSNotification *) notification {
     self.annotation = MKPointAnnotation.new;
     CLLocation *coordinate = notification.object;
-    _annotation.title = @"Title";
+    _annotation.title = @"You are here!";
     _annotation.subtitle = @"Subtitle";
     _annotation.coordinate = CLLocationCoordinate2DMake(coordinate.coordinate.latitude, coordinate.coordinate.longitude);
     [_map_main addAnnotation:_annotation];
