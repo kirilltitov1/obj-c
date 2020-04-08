@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF05505424322CF0009095EC /* LocationServices.m in Sources */ = {isa = PBXBuildFile; fileRef = EF05505324322CF0009095EC /* LocationServices.m */; };
 		EF1E2EF02428CFD400486753 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EEF2428CFD400486753 /* AppDelegate.m */; };
 		EF1E2EF32428CFD400486753 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EF22428CFD400486753 /* SceneDelegate.m */; };
 		EF1E2EF62428CFD400486753 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2EF52428CFD400486753 /* ViewController.m */; };
@@ -16,12 +15,13 @@
 		EF1E2EFE2428CFD600486753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1E2EFC2428CFD600486753 /* LaunchScreen.storyboard */; };
 		EF1E2F012428CFD600486753 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1E2F002428CFD600486753 /* main.m */; };
 		EF503C72242E3E6A00148B7A /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF503C71242E3E6A00148B7A /* MapVC.m */; };
-		EF503C75242E420800148B7A /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = EF503C74242E420800148B7A /* Map.m */; };
+		EFB43375243CC75E00AEA2A5 /* TicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43374243CC75E00AEA2A5 /* TicketCell.m */; };
+		EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */; };
+		EFB4337C243CCE2F00AEA2A5 /* Tickets.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB4337B243CCE2F00AEA2A5 /* Tickets.m */; };
+		EFB43383243CD1AB00AEA2A5 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43382243CD1AB00AEA2A5 /* Ticket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF05505224322CF0009095EC /* LocationServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationServices.h; sourceTree = "<group>"; };
-		EF05505324322CF0009095EC /* LocationServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationServices.m; sourceTree = "<group>"; };
 		EF1E2EEB2428CFD400486753 /* CLGeocoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLGeocoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1E2EEE2428CFD400486753 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EF1E2EEF2428CFD400486753 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,8 +36,14 @@
 		EF1E2F002428CFD600486753 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EF503C70242E3E6A00148B7A /* MapVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
 		EF503C71242E3E6A00148B7A /* MapVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
-		EF503C73242E420800148B7A /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
-		EF503C74242E420800148B7A /* Map.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		EFB43373243CC75E00AEA2A5 /* TicketCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketCell.h; sourceTree = "<group>"; };
+		EFB43374243CC75E00AEA2A5 /* TicketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketCell.m; sourceTree = "<group>"; };
+		EFB43377243CC8FD00AEA2A5 /* TicketsCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsCollectionView.h; sourceTree = "<group>"; };
+		EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsCollectionView.m; sourceTree = "<group>"; };
+		EFB4337A243CCE2F00AEA2A5 /* Tickets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tickets.h; sourceTree = "<group>"; };
+		EFB4337B243CCE2F00AEA2A5 /* Tickets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tickets.m; sourceTree = "<group>"; };
+		EFB43381243CD1AB00AEA2A5 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
+		EFB43382243CD1AB00AEA2A5 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +60,9 @@
 		EF05505124322CD2009095EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF05505224322CF0009095EC /* LocationServices.h */,
-				EF05505324322CF0009095EC /* LocationServices.m */,
+				EFB4337A243CCE2F00AEA2A5 /* Tickets.h */,
+				EFB4337B243CCE2F00AEA2A5 /* Tickets.m */,
+				EFB43380243CCFF200AEA2A5 /* The ticket */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,8 +102,7 @@
 		EF503C76242E423900148B7A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EF503C73242E420800148B7A /* Map.h */,
-				EF503C74242E420800148B7A /* Map.m */,
+				EFB43376243CC88A00AEA2A5 /* CollectionView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +127,34 @@
 				EF503C71242E3E6A00148B7A /* MapVC.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EFB43372243CC6DE00AEA2A5 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFB43373243CC75E00AEA2A5 /* TicketCell.h */,
+				EFB43374243CC75E00AEA2A5 /* TicketCell.m */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		EFB43376243CC88A00AEA2A5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				EFB43377243CC8FD00AEA2A5 /* TicketsCollectionView.h */,
+				EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */,
+				EFB43372243CC6DE00AEA2A5 /* CollectionViewCell */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		EFB43380243CCFF200AEA2A5 /* The ticket */ = {
+			isa = PBXGroup;
+			children = (
+				EFB43381243CD1AB00AEA2A5 /* Ticket.h */,
+				EFB43382243CD1AB00AEA2A5 /* Ticket.m */,
+			);
+			path = "The ticket";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,13 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF503C75242E420800148B7A /* Map.m in Sources */,
 				EF1E2EF62428CFD400486753 /* ViewController.m in Sources */,
 				EF1E2EF02428CFD400486753 /* AppDelegate.m in Sources */,
+				EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */,
+				EFB4337C243CCE2F00AEA2A5 /* Tickets.m in Sources */,
+				EFB43375243CC75E00AEA2A5 /* TicketCell.m in Sources */,
+				EFB43383243CD1AB00AEA2A5 /* Ticket.m in Sources */,
 				EF1E2F012428CFD600486753 /* main.m in Sources */,
 				EF1E2EF32428CFD400486753 /* SceneDelegate.m in Sources */,
 				EF503C72242E3E6A00148B7A /* MapVC.m in Sources */,
-				EF05505424322CF0009095EC /* LocationServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
