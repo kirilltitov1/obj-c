@@ -45,6 +45,8 @@ static NSString * const reuseIdentifier = @"ticketCell";
 }
 
 #pragma mark <UICollectionViewDelegate>
+
+#warning вот здесь я задаю размер для cell
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat aside = ([UIScreen mainScreen].bounds.size.width - 24)/2;
     CGSize frame = CGSizeMake(aside, aside);
