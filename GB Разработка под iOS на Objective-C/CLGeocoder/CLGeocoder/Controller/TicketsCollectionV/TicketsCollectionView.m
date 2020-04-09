@@ -10,6 +10,8 @@
 
 @interface TicketsCollectionView ()
 
+@property (nonatomic, strong) NSMutableArray<CheapestTicket *>* searchCheapestTickets;
+
 @end
 
 @implementation TicketsCollectionView
@@ -48,6 +50,11 @@ static NSString * const reuseIdentifier = @"ticketCell";
     CGSize frame = CGSizeMake(aside, aside);
 
     return frame;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *searchBar = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"searchBar" forIndexPath:indexPath];
+    return searchBar;
 }
 
 #pragma mark download data
@@ -107,11 +114,32 @@ NSInteger alphabeticSort(id string1, id string2, void *reverse)
         }
         
         self.cheapestTickets = cheapestTickets;
+        self.searchCheapestTickets = NSMutableArray.new;
+        [self.searchCheapestTickets addObjectsFromArray:self.cheapestTickets];
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });
     }] resume];
 }
+
+#pragma mark <UISearchBarDelegate>
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_cheapestTickets removeAllObjects];
+    
+    for (CheapestTicket *item in _searchCheapestTickets) {
+        if ([item.airline.lowercaseString containsString:searchBar.text.lowercaseString]) {
+            [self.cheapestTickets addObject:item];
+            
+            [self.collectionView reloadData];
+        }
+    }
+    if ([searchBar.text isEqualToString:@""]) {
+        self.cheapestTickets = self.searchCheapestTickets;
+        [self.collectionView reloadData];
+    }
+}
+
 
 @end

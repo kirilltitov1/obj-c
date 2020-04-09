@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TicketsCollectionView : UICollectionViewController
+@interface TicketsCollectionView : UICollectionViewController <UISearchBarDelegate>
 @property (strong, nonatomic) NSMutableArray<CheapestTicket *>* cheapestTickets;
 @property (strong, nonatomic) Airports *airports;
 

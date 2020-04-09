@@ -19,6 +19,7 @@
 		EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */; };
 		EFB43383243CD1AB00AEA2A5 /* CheapestTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43382243CD1AB00AEA2A5 /* CheapestTicket.m */; };
 		EFB6CEB1243E637500C75566 /* Airports.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB6CEB0243E637500C75566 /* Airports.m */; };
+		EFB6CEB6243F370100C75566 /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB6CEB5243F370100C75566 /* SearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		EFB43382243CD1AB00AEA2A5 /* CheapestTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheapestTicket.m; sourceTree = "<group>"; };
 		EFB6CEAF243E637500C75566 /* Airports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airports.h; sourceTree = "<group>"; };
 		EFB6CEB0243E637500C75566 /* Airports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airports.m; sourceTree = "<group>"; };
+		EFB6CEB4243F370100C75566 /* SearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
+		EFB6CEB5243F370100C75566 /* SearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 				EF503C77242E424900148B7A /* Foundation */,
 				EF503C78242E427600148B7A /* Controllers */,
 				EF05505124322CD2009095EC /* Model */,
+				EFB6CEB7243F4CE900C75566 /* Controller */,
 				EF503C76242E423900148B7A /* View */,
 				EF1E2EFA2428CFD600486753 /* Assets.xcassets */,
 				EF1E2EF72428CFD400486753 /* Main.storyboard */,
@@ -101,6 +105,7 @@
 		EF503C76242E423900148B7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EFB6CEB3243F36CC00C75566 /* SearchBar */,
 				EFB43376243CC88A00AEA2A5 /* CollectionView */,
 			);
 			path = View;
@@ -140,8 +145,6 @@
 		EFB43376243CC88A00AEA2A5 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				EFB43377243CC8FD00AEA2A5 /* TicketsCollectionView.h */,
-				EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */,
 				EFB43372243CC6DE00AEA2A5 /* CollectionViewCell */,
 			);
 			path = CollectionView;
@@ -163,6 +166,32 @@
 				EFB6CEB0243E637500C75566 /* Airports.m */,
 			);
 			path = Airports;
+			sourceTree = "<group>";
+		};
+		EFB6CEB3243F36CC00C75566 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				EFB6CEB4243F370100C75566 /* SearchBar.h */,
+				EFB6CEB5243F370100C75566 /* SearchBar.m */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		EFB6CEB7243F4CE900C75566 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFB6CEB8243F4CF700C75566 /* TicketsCollectionV */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EFB6CEB8243F4CF700C75566 /* TicketsCollectionV */ = {
+			isa = PBXGroup;
+			children = (
+				EFB43377243CC8FD00AEA2A5 /* TicketsCollectionView.h */,
+				EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */,
+			);
+			path = TicketsCollectionV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1E2EF62428CFD400486753 /* ViewController.m in Sources */,
+				EFB6CEB6243F370100C75566 /* SearchBar.m in Sources */,
 				EFB6CEB1243E637500C75566 /* Airports.m in Sources */,
 				EF1E2EF02428CFD400486753 /* AppDelegate.m in Sources */,
 				EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */,
