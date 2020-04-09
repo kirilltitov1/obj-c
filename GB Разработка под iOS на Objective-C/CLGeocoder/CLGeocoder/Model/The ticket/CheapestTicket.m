@@ -6,8 +6,8 @@
 //  Copyright © 2020 Кирилл Титов. All rights reserved.
 //
 
-#import "Ticket.h"
+#import "CheapestTicket.h"
 
-@implementation Ticket
+@implementation CheapestTicket
 
 @end

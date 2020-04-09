@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TicketCell : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *coastLabel;
-@property (nonatomic, weak) IBOutlet UILabel *airline;
-@property (nonatomic, weak) IBOutlet UILabel *destination;
+@property (nonatomic, weak) IBOutlet UILabel *airlineLabel;
+@property (nonatomic, weak) IBOutlet UILabel *destinationLabel;
 
-- (void)setup;
+- (void)setupCell:(NSNumber *)value destination:(NSString *)destination airline:(NSString *)airline;
 
 @end
 

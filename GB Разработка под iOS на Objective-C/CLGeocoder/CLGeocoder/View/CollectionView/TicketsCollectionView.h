@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TicketCell.h"
+#import "Airports.h"
+#import "CheapestTicket.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TicketsCollectionView : UICollectionViewController
+@property (strong, nonatomic) NSMutableArray<CheapestTicket *>* cheapestTickets;
+@property (strong, nonatomic) Airports *airports;
 
 @end
 

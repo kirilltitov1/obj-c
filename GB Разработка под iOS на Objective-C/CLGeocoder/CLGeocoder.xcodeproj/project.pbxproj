@@ -17,8 +17,8 @@
 		EF503C72242E3E6A00148B7A /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF503C71242E3E6A00148B7A /* MapVC.m */; };
 		EFB43375243CC75E00AEA2A5 /* TicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43374243CC75E00AEA2A5 /* TicketCell.m */; };
 		EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */; };
-		EFB4337C243CCE2F00AEA2A5 /* Tickets.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB4337B243CCE2F00AEA2A5 /* Tickets.m */; };
-		EFB43383243CD1AB00AEA2A5 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43382243CD1AB00AEA2A5 /* Ticket.m */; };
+		EFB43383243CD1AB00AEA2A5 /* CheapestTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB43382243CD1AB00AEA2A5 /* CheapestTicket.m */; };
+		EFB6CEB1243E637500C75566 /* Airports.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB6CEB0243E637500C75566 /* Airports.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +40,10 @@
 		EFB43374243CC75E00AEA2A5 /* TicketCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketCell.m; sourceTree = "<group>"; };
 		EFB43377243CC8FD00AEA2A5 /* TicketsCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsCollectionView.h; sourceTree = "<group>"; };
 		EFB43378243CC8FD00AEA2A5 /* TicketsCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsCollectionView.m; sourceTree = "<group>"; };
-		EFB4337A243CCE2F00AEA2A5 /* Tickets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tickets.h; sourceTree = "<group>"; };
-		EFB4337B243CCE2F00AEA2A5 /* Tickets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tickets.m; sourceTree = "<group>"; };
-		EFB43381243CD1AB00AEA2A5 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
-		EFB43382243CD1AB00AEA2A5 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		EFB43381243CD1AB00AEA2A5 /* CheapestTicket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheapestTicket.h; sourceTree = "<group>"; };
+		EFB43382243CD1AB00AEA2A5 /* CheapestTicket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheapestTicket.m; sourceTree = "<group>"; };
+		EFB6CEAF243E637500C75566 /* Airports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airports.h; sourceTree = "<group>"; };
+		EFB6CEB0243E637500C75566 /* Airports.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airports.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +60,8 @@
 		EF05505124322CD2009095EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EFB4337A243CCE2F00AEA2A5 /* Tickets.h */,
-				EFB4337B243CCE2F00AEA2A5 /* Tickets.m */,
 				EFB43380243CCFF200AEA2A5 /* The ticket */,
+				EFB6CEB2243E637E00C75566 /* Airports */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,10 +150,19 @@
 		EFB43380243CCFF200AEA2A5 /* The ticket */ = {
 			isa = PBXGroup;
 			children = (
-				EFB43381243CD1AB00AEA2A5 /* Ticket.h */,
-				EFB43382243CD1AB00AEA2A5 /* Ticket.m */,
+				EFB43381243CD1AB00AEA2A5 /* CheapestTicket.h */,
+				EFB43382243CD1AB00AEA2A5 /* CheapestTicket.m */,
 			);
 			path = "The ticket";
+			sourceTree = "<group>";
+		};
+		EFB6CEB2243E637E00C75566 /* Airports */ = {
+			isa = PBXGroup;
+			children = (
+				EFB6CEAF243E637500C75566 /* Airports.h */,
+				EFB6CEB0243E637500C75566 /* Airports.m */,
+			);
+			path = Airports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,11 +236,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1E2EF62428CFD400486753 /* ViewController.m in Sources */,
+				EFB6CEB1243E637500C75566 /* Airports.m in Sources */,
 				EF1E2EF02428CFD400486753 /* AppDelegate.m in Sources */,
 				EFB43379243CC8FD00AEA2A5 /* TicketsCollectionView.m in Sources */,
-				EFB4337C243CCE2F00AEA2A5 /* Tickets.m in Sources */,
 				EFB43375243CC75E00AEA2A5 /* TicketCell.m in Sources */,
-				EFB43383243CD1AB00AEA2A5 /* Ticket.m in Sources */,
+				EFB43383243CD1AB00AEA2A5 /* CheapestTicket.m in Sources */,
 				EF1E2F012428CFD600486753 /* main.m in Sources */,
 				EF1E2EF32428CFD400486753 /* SceneDelegate.m in Sources */,
 				EF503C72242E3E6A00148B7A /* MapVC.m in Sources */,

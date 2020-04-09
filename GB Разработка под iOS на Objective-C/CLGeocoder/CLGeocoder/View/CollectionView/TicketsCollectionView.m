@@ -19,40 +19,25 @@ static NSString * const reuseIdentifier = @"ticketCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[TicketCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+    self.airports = Airports.new;
+    [self fetchNewsUsingJSON];
 }
 
 - (void)customization {
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark <UICollectionViewDataSource>
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return _cheapestTickets.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TicketCell *cell = (TicketCell *) [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    TicketCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ticketCell" forIndexPath:indexPath];
     
-    cell.airline.text = @"123";
+    [cell setupCell:_cheapestTickets[indexPath.row].price destination:_airports.HKT airline:_cheapestTickets[indexPath.row].airline];
     
     return cell;
 }
@@ -65,33 +50,68 @@ static NSString * const reuseIdentifier = @"ticketCell";
     return frame;
 }
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
+#pragma mark download data
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+NSInteger alphabeticSort(id string1, id string2, void *reverse)
+{
+    if (*(BOOL *)reverse == YES) {
+        return [string2 localizedStandardCompare:string1];
+    }
+    return [string1 localizedStandardCompare:string2];
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
+- (void) fetchNewsUsingJSON {
+    NSString* apiKey = @"7e22896b9b8af259d2879e0ab6911c42";
+    NSString* urlString = [NSString stringWithFormat:@"%@%@%@%@",@"https://api.travelpayouts.com/v1/prices/cheap?origin=MOW&destination=", self.airports.HKT, @"&depart_date=2020-05&return_date=2020-05&token=", apiKey];
+    NSURL* url = [NSURL URLWithString:urlString];
+     
+    [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSError* err = error;
+        if (err) {
+            NSLog(@"%@", err);
+            return;
+        }
+        
+        NSMutableArray *cheapestTickets = NSMutableArray.new;
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
+        NSDictionary *dataJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
+        
+        NSDictionary *airportsDict = dataJSON[@"data"];
+        
+        NSDictionary *airportDict = airportsDict[@"HKT"];
+        
+        BOOL reverseSort = NO;
+        NSArray *keys = [airportDict.allKeys sortedArrayUsingFunction:alphabeticSort context:&reverseSort];
+        
+        for (NSString *key in keys) {
+            NSDateFormatter *isoFormat = NSDateFormatter.new;
+            [isoFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+            isoFormat.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+            
+            NSDictionary *ticketDict = airportDict[key];
+            CheapestTicket *cheapestTicket = CheapestTicket.new;
+            cheapestTicket.price = ticketDict[@"price"];
+            cheapestTicket.airline = ticketDict[@"airline"];
+            cheapestTicket.flight_number = ticketDict[@"flight_number"];
+            
+            NSDate *parsedDate = [isoFormat dateFromString:ticketDict[@"departure_at"]];
+            
+            cheapestTicket.departure_at = parsedDate;
+            parsedDate = [isoFormat dateFromString:ticketDict[@"return_at"]];
+            cheapestTicket.return_at = parsedDate;
+            parsedDate = [isoFormat dateFromString:ticketDict[@"expires_at"]];
+            cheapestTicket.expires_at = parsedDate;
+            
+            [cheapestTickets addObject:cheapestTicket];
+        }
+        
+        self.cheapestTickets = cheapestTickets;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    }] resume];
 }
-*/
 
 @end
